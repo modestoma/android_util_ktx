@@ -11,8 +11,8 @@ private val LINE_SEP by lazy { System.lineSeparator() }
  * @param isSuper     [Boolean] is super user
  * @author Created by Modesto in 2022/4/16
  */
-fun getSystemProperty(propertyKey: String, isSuper: Boolean = false): String {
-    return execCommand("getprop $propertyKey", isSuper = isSuper, isNeedResult = true).output.ifBlank { "Null" }
+fun getSystemProperty(propertyKey: String, default: String = "", isSuper: Boolean = false): String {
+    return execCommand("getprop $propertyKey", isSuper = isSuper, isNeedResult = true).output.ifBlank { default }
 }
 
 /**
@@ -57,8 +57,8 @@ fun execCommand(vararg commands: String,
             os.flush()
             resultCode = process.waitFor()
             if (isNeedResult) {
-                output = process.inputStream.bufferedReader().readText()
-                error = process.errorStream.bufferedReader().readText()
+                output = process.inputStream.bufferedReader().readText().trimEnd()
+                error = process.errorStream.bufferedReader().readText().trimEnd()
             }
         }
     } finally {

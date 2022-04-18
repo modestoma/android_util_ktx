@@ -30,6 +30,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
     }
     buildFeatures {
         compose = true
@@ -46,14 +47,15 @@ android {
 
 dependencies {
 
-//    implementation(project(":utils"))
-    implementation("com.modestoma:utilx:0.0.1")
+    implementation(project(":utils"))
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    val compose_version = "1.1.1"
-    implementation("androidx.compose.ui:ui:$compose_version")
-    implementation("androidx.compose.material:material:$compose_version")
-    implementation("androidx.compose.ui:ui-tooling-preview:$compose_version")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+
+    // compose
     implementation("androidx.activity:activity-compose:1.4.0")
+    val composeVersion = "1.1.1"
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.material3:material3:1.0.0-alpha09")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0")
+    implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
 }
