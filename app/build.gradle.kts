@@ -46,7 +46,8 @@ android {
 
 dependencies {
 
-    implementation(project(":utils"))
+//    implementation(project(":utils"))
+    implementation("com.modestoma:utilx:0.0.1")
 
     implementation("androidx.core:core-ktx:1.7.0")
     val compose_version = "1.1.1"
