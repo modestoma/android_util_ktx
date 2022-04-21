@@ -8,6 +8,7 @@ private val LINE_SEP by lazy { System.lineSeparator() }
  * get system property value
  *
  * @param propertyKey [String] property key
+ * @param default     [String] default value
  * @param isSuper     [Boolean] is super user
  * @author Created by Modesto in 2022/4/16
  */

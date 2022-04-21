@@ -7,13 +7,11 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 31
 
     defaultConfig {
-        aarMetadata {
-            minSdk = 24
-        }
-        targetSdk = 32
+        minSdk = 24
+        targetSdk = 31
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -30,6 +28,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+}
+
+dependencies {
+    implementation("com.google.android.material:material:1.5.0")
 }
 
 mavenPublish {
