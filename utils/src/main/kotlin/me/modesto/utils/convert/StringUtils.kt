@@ -1,4 +1,4 @@
-package me.modesto.utils
+package me.modesto.utils.convert
 
 /**
  * Description.

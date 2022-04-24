@@ -1,4 +1,4 @@
-package me.modesto.utils
+package me.modesto.utils.system
 
 import android.content.Context
 import android.util.TypedValue

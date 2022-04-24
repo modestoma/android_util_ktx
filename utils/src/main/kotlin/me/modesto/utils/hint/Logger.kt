@@ -1,6 +1,9 @@
-package me.modesto.utils
+package me.modesto.utils.hint
 
 import android.util.Log
+import me.modesto.utils.AppContext
+import me.modesto.utils.file.ensureFileExists
+import me.modesto.utils.file.write2File
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.Executors
@@ -271,7 +274,7 @@ object Logger {
      */
     data class LoggerConfig(var enable: Boolean = true,
                             var write2File: Boolean = false,
-                            var logDir: String = "${AppContext.current.filesDir.path}${FILE_SEP}logs${FILE_SEP}",
+                            var logDir: String = "${AppContext.current.filesDir.path}${FILE_SEP}logs$FILE_SEP",
                             var logFilePrefix: String = "log",
                             var logFileExtension: String = "txt",
                             var defaultTag: String = "Logger")

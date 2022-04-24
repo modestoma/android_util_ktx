@@ -1,9 +1,10 @@
-package me.modesto.utils
+package me.modesto.utils.system
 
 import android.content.Context
 import android.graphics.Point
 import android.os.Build
 import android.view.WindowManager
+import me.modesto.utils.AppContext
 
 /**
  * get screen width

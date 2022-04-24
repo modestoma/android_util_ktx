@@ -1,6 +1,7 @@
 package me.modesto.utils
 
 import android.content.Context
+import me.modesto.utils.hint.Logger
 
 /**
  * Description.

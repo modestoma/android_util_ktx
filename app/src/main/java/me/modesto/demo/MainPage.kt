@@ -5,8 +5,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import me.modesto.demo.page.BarUtilsPage
-import me.modesto.utils.locationManager
-import me.modesto.utils.mediaRouter
 
 
 /**
@@ -20,7 +18,6 @@ fun MainPage() {
     MaterialTheme {
         Scaffold {
             BarUtilsPage()
-            mediaRouter
         }
     }
 }

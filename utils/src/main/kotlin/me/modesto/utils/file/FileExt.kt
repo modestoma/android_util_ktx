@@ -1,6 +1,8 @@
-package me.modesto.utils
+package me.modesto.utils.file
 
 import android.net.Uri
+import android.os.Environment
+import me.modesto.utils.AppContext
 import java.io.BufferedWriter
 import java.io.File
 import java.io.FileWriter
@@ -237,3 +239,12 @@ fun File?.write2File(content: String, isAppend: Boolean = true): Boolean {
     }
     return true
 }
+
+///////////////////////////////////////////////////////////////////////////
+// File path
+///////////////////////////////////////////////////////////////////////////
+val filesDir: File by lazy { AppContext.current.filesDir }
+val cacheDir: File by lazy { AppContext.current.cacheDir }
+val rootDir: File by lazy { Environment.getRootDirectory() }
+val dataDir: File by lazy { Environment.getDataDirectory() }
+val downloadCacheDir: File by lazy { Environment.getDownloadCacheDirectory() }

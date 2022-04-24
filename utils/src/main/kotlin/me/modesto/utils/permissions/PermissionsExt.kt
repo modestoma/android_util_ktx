@@ -1,20 +1,22 @@
 package me.modesto.utils.permissions
 
+import android.content.Context
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
+
 /**
  * Description.
  *
  * @author Created by Modesto in 2022/4/22
  */
-//suspend inline fun ensurePermission(activity: Activity,
-//                                    fragmentManager: FragmentManager,
-//                                    lifecycle: Lifecycle,
-//                                    permission: String,
-//                                    showRationaleAndContinueOrReturn: () -> Boolean,
-//                                    showRationaleBeforeFirstAsk: Boolean = true,
-//                                    askOpenSettingsOrReturn: () -> Boolean,
-//                                    returnOrThrowBlock: () -> Nothing
-//) {
-//    var askCount = 0
-//    if (23 > Build.VERSION.SDK_INT) return
-//    askLoop@ while (!)
-//}
+fun Context.hasPermissions(vararg permissions: String): Boolean {
+    if (permissions.isEmpty()) {
+        return true
+    }
+    permissions.forEach { permission ->
+        if (PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, permission)) {
+            return false
+        }
+    }
+    return true
+}

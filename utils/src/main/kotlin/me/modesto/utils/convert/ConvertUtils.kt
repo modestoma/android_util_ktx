@@ -1,6 +1,6 @@
 @file:Suppress("NOTHING_TO_INLINE")
 
-package me.modesto.utils
+package me.modesto.utils.convert
 
 import android.content.res.Resources
 
