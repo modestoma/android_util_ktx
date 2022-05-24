@@ -7,11 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk = 31
+    namespace = "me.modesto.utils"
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 24
-        targetSdk = 31
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -31,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation("com.google.android.material:material:1.5.0")
+    api("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
 }
 
 mavenPublish {

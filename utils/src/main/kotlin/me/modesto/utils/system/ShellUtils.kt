@@ -13,7 +13,7 @@ private val LINE_SEP by lazy { System.lineSeparator() }
  * @author Created by Modesto in 2022/4/16
  */
 fun getSystemProperty(propertyKey: String, default: String = "", isSuper: Boolean = false): String {
-    return execCommand("getprop $propertyKey", isSuper = isSuper, isNeedResult = true).output.ifBlank { default }
+    return execCommand("getprop $propertyKey", isSuper = isSuper).output.ifBlank { default }
 }
 
 /**
@@ -25,7 +25,7 @@ fun getSystemProperty(propertyKey: String, default: String = "", isSuper: Boolea
  * @author Created by Modesto in 2022/4/16
  */
 fun setSystemProperty(propertyKey: String, propertyValue: String, isSuper: Boolean = false): Boolean {
-    return execCommand("setprop $propertyKey $propertyValue", isSuper = isSuper).isSuccess
+    return execCommand("setprop $propertyKey $propertyValue", isSuper = isSuper, isNeedResult = false).isSuccess
 }
 
 /**
@@ -38,7 +38,7 @@ fun setSystemProperty(propertyKey: String, propertyValue: String, isSuper: Boole
  */
 fun execCommand(vararg commands: String,
                 isSuper: Boolean = false,
-                isNeedResult: Boolean = false): CommandResult {
+                isNeedResult: Boolean = true): CommandResult {
     var resultCode = -1
     var output = ""
     var error = ""

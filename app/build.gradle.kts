@@ -36,7 +36,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
+        kotlinCompilerExtensionVersion = "1.2.0-beta01"
     }
     packagingOptions {
         resources {
@@ -49,13 +49,14 @@ dependencies {
 
     implementation(project(":utils"))
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+    implementation("com.github.DylanCaiCoding.Longan:longan:1.0.5")
 
     // compose
     implementation("androidx.activity:activity-compose:1.4.0")
-    val composeVersion = "1.1.1"
+    val composeVersion = "1.2.0-beta01"
     implementation("androidx.compose.ui:ui:$composeVersion")
-    implementation("androidx.compose.material3:material3:1.0.0-alpha09")
+    implementation("androidx.compose.material3:material3:1.0.0-alpha11")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0")
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
 }

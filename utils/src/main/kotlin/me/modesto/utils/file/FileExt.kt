@@ -224,7 +224,8 @@ private fun File.copyFile(dest: File, overwrite: Boolean): Boolean {
  * @param isAppend [Boolean] true if the content should be appended to the file, false otherwise
  * @author Created by Modesto in 2022/3/14
  */
-fun String?.write2File(content: String, isAppend: Boolean = true): Boolean = this.getFile().write2File(content, isAppend)
+fun String?.write2File(content: String, isAppend: Boolean = true): Boolean =
+    this.getFile().write2File(content, isAppend)
 
 fun File?.write2File(content: String, isAppend: Boolean = true): Boolean {
     if (null == this) return false
